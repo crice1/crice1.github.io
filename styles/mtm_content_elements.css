@@ -151,7 +151,7 @@ body, input, select, textarea, button, .ui-btn, .mobile-detail-page {
 }
 
 .mobile-content .ui-listview li {
-    background-color: #fcfcfc !important;
+    background-color: #333 !important;
     color: #666666;
     font-size: 13px;
     font-weight: normal;
@@ -160,7 +160,7 @@ body, input, select, textarea, button, .ui-btn, .mobile-detail-page {
 }
 
 .mobile-content .ui-listview a {
-	background-color: #fcfcfc !important;
+	background-color: #333 !important;
     color: #666666;
     font-size: 13px;
     font-weight: normal;
@@ -191,9 +191,9 @@ body, input, select, textarea, button, .ui-btn, .mobile-detail-page {
 }
 
 .mobile-content .ui-listview > .ui-li-divider {
-    background-color: #bbbbbb !important;
-    color: #ffffff;
-    font-weight: bold;
+    background-color: #666 !important;
+    color: #ddd;
+    font-weight: normal;
     text-shadow: none;
 }
 
@@ -2183,7 +2183,9 @@ input.requiredField, select.requiredField, textarea.requiredField{
 .mobile-content .ui-listview .sectionItem a{
 	font-size: 16px !important;
     line-height: 18px !important;
-    color:#555555 !important;
+    color:#ddd !important;
+    text-shadow:none;
+    border:0px none;
 }
 
 /* section pref styles */
