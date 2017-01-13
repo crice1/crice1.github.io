@@ -76,22 +76,8 @@
 
 		<a href="#flyout_origin" data-rel="close" data-ajax="false"><span class="icon_vector icon_mobile_close"></span></a>
 		<ul data-role="listview" data-inset="true">
-			<li data-role="list-divider">
-			<div style="height: 50px;">
-				<!-- \\ Photo placeholder \\ -->
-				<div id="tenantPhoto" style="float:left; min-width: 45px; min-height:45px; margin-right:5px;">
-					<img src="/images/user_default/default.jpg" width="45" height="45" />
-				</div>
-				Corey Rice<br />
-				My Company<br />
-				example@email.com
-			</div>
-			</li>
-			<li><a href="#">Account Details</a></li>
-			<li><a href="#">Notification Preferences</a></li>
-			<li><a href="#">Alerts</a></li>
-			<li data-role="list-divider" style="padding-top:3px; padding-bottom:3px;"></li>
-			<li><a href="#">Sign Out</a></li>
+			<li><a href="#">Send Example SR Push Notification</a></li>
+			<li><a href="#">Send Example CR Push Notification</a></li>
 		</ul>
 		</cfoutput>
 		<br/>
@@ -116,22 +102,22 @@
 	</div> <!-- end header -->
 	<div class="ui-content mobile-content" role="main"><!-- Start Main Content -->
 
-		<div class="front-page-alert">
+		<div class="front-page-alert front-page-alert-off">
   
-		<div class="front-page-alert-header">
-			<span class="icon_vector icon_yellowcaution inline_icon"></span> Tornado Watch
-			<span class="front-page-alert-close" onclick="$('.front-page-alert').addClass('front-page-alert-off');">&times;</span>
-		</div>
+			<div class="front-page-alert-header">
+				<span class="icon_vector icon_yellowcaution inline_icon"></span> Tornado Watch
+				<span class="front-page-alert-close" onclick="$('.front-page-alert').addClass('front-page-alert-off');">&times;</span>
+			</div>
 
-		<div class="front-page-alert-content">
-			A Tornado Watch has been issued for area lasting from 3:00PM to 5:00PM today. Please alert all of your employees and review the tornado shelter plan in place for the building.
-		</div>
+			<div class="front-page-alert-content">
+				A Tornado Watch has been issued for area lasting from 3:00PM to 5:00PM today. Please alert all of your employees and review the tornado shelter plan in place for the building.
+			</div>
 
-		<div class="front-page-alert-footer">
-			Alert expires on April 15th, 2015 at 4:59PM
+			<div class="front-page-alert-footer">
+				Alert expires on April 15th, 2015 at 4:59PM
+			</div>
+		  
 		</div>
-	  
-	</div>
 
 	<ul class="ui-nodisc-icon sortable" data-role="listview" data-inset="true" id="SRSList">
 		<li data-role="list-divider">Examples</li>

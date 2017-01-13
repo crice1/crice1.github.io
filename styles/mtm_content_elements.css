@@ -182,7 +182,7 @@ body, input, select, textarea, button, .ui-btn, .mobile-detail-page {
 }
 
 .mobile-content .ui-listview a:hover{
-	background-color: #f0f0f0 !important;
+	background-color: #444 !important;
 }
 
 .mobile-content .ui-listview .ui-slider-switch a{
