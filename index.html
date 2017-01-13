@@ -1,7 +1,254 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Service Workers Example</title>
+
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no"><!-- Prevent auto phone number links -->
+	<meta name="apple-mobile-web-app-title"	content="Service Workers">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"><!-- Set iOS status bar to black -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/scripts/jquery.mobile-1.4.5/demos/css/themes/default/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" type="text/css" href="/styles/mtm_content_elements.css?v2">
+	<link rel="stylesheet" type="text/css" href="/styles/mtm_content_elements_tc.css">
+	<link rel="stylesheet" type="text/css" href="/styles/icons.css">
+
+	<!-- \\ Meta data for various iOS devices -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/mtm-apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="192x192" href="/mtm-apple-touch-icon-192.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/mtm-apple-touch-icon-152.png">
+	<link rel="apple-touch-icon" sizes="128x128" href="/mtm-apple-touch-icon-128.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/mtm-apple-touch-icon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/mtm-apple-touch-icon-76.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/mtm-apple-touch-icon-60.png">
+	<!-- \\ Icon support for Android \\ -->
+	<link rel="icon" sizes="180x180" href="/mtm-apple-touch-icon.png">
+	<link rel="icon" sizes="192x192" href="/mtm-apple-touch-icon-192.png">
+	<link rel="icon" sizes="152x152" href="/mtm-apple-touch-icon-152.png">
+	<link rel="icon" sizes="128x128" href="/mtm-apple-touch-icon-128.png">
+	<link rel="icon" sizes="120x120" href="/mtm-apple-touch-icon-120.png">
+	<link rel="icon" sizes="76x76" href="/mtm-apple-touch-icon-76.png">
+	<link rel="icon" sizes="60x60" href="/mtm-apple-touch-icon-60.png">
+	<!-- \\ Include android web app manifest \\ -->
+	<link rel="manifest" href="/manifest.json">
+
+
+	<script src="/scripts/mobile/disableAjaxLinks.js"></script><!-- this has to be loaded before jquery mobile to work -->
+	<script src="/scripts/mobile/bookmarkbubble.min.js"></script>
+	<script src="/scripts/mobile/deviceDetection.js"></script>
+
+
+	<script src="/scripts/jquery.mobile-1.4.5/demos/js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="/scripts/jquery_ui_dragsort/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/scripts/touchpunch/touchpunch.js"></script>
+	<script src="/scripts/mobile/feedback_messages.js"></script>
+	<script src="/scripts/mobile/convertColdFusionJSON.js"></script>
+	<script src="/scripts/mobile/mobile.js"></script>
+	<!-- display placeholder values for inputs on IE9 and below -->
+	<script src="/scripts/jquery_placeholder/jquery.placeholder.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input, textarea').placeholder();
+			if(!iOS){
+				$('#BubbleAnchor').hide();
+			}
+		})
+	</script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet"> 
+
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+	
+	<div data-role="page" class="mobile-wrapper">
+
+	<div data-role="panel" id="panel-overlay" data-display="overlay" data-position-fixed="true" class="ui-nodisc-icon">
+
+		<a href="#flyout_origin" data-rel="close" data-ajax="false"><span class="icon_vector icon_mobile_close"></span></a>
+		<ul data-role="listview" data-inset="true">
+			<li data-role="list-divider">
+			<div style="height: 50px;">
+				<!-- \\ Photo placeholder \\ -->
+				<div id="tenantPhoto" style="float:left; min-width: 45px; min-height:45px; margin-right:5px;">
+					<img src="/images/user_default/default.jpg" width="45" height="45" />
+				</div>
+				Corey Rice<br />
+				My Company<br />
+				example@email.com
+			</div>
+			</li>
+			<li><a href="#">Account Details</a></li>
+			<li><a href="#">Notification Preferences</a></li>
+			<li><a href="#">Alerts</a></li>
+			<li data-role="list-divider" style="padding-top:3px; padding-bottom:3px;"></li>
+			<li><a href="#">Sign Out</a></li>
+		</ul>
+		</cfoutput>
+		<br/>
+		<div id="BubbleAnchor">
+			<button class="ui-btn ui-shadow ui-corner-all homeIconShortcut">Add to Home Screen</button>
+		</div>
+		<div style="clear: both;"><br /><br /></div>
+	</div>
+
+
+	<div class="mobile-header theme-color" data-role="header" data-position="fixed" data-tap-toggle="false">
+		
+		<h1 id="home-header2">Service Worker Example</h1>
+		
+		<span class="ui-li-count highpriority ui-body-inherit all-tasks-count" id="alertCount">0</span> <!-- this cant be an <a> tag, something weird with jquery mobile. use onclick for link. -->
+
+		<a href="#" data-role="none"><span class="icon_vector icon_mobile_search"></span></a>
+		
+		<!--<a href="?pid=accountmenu" data-role="none"><span class="icon icon_mobile_nav"></span></a>-->
+		<a id="flyout_origin" href="#panel-overlay" data-role="none" data-ajax="false"><span class="icon_vector icon_mobile_nav"></span></a>
+
+	</div> <!-- end header -->
+	<div class="ui-content mobile-content" role="main"><!-- Start Main Content -->
+
+		<div class="front-page-alert">
+  
+		<div class="front-page-alert-header">
+			<span class="icon_vector icon_yellowcaution inline_icon"></span> Tornado Watch
+			<span class="front-page-alert-close" onclick="$('.front-page-alert').addClass('front-page-alert-off');">&times;</span>
+		</div>
+
+		<div class="front-page-alert-content">
+			A Tornado Watch has been issued for area lasting from 3:00PM to 5:00PM today. Please alert all of your employees and review the tornado shelter plan in place for the building.
+		</div>
+
+		<div class="front-page-alert-footer">
+			Alert expires on April 15th, 2015 at 4:59PM
+		</div>
+	  
+	</div>
+
+	<ul class="ui-nodisc-icon sortable" data-role="listview" data-inset="true" id="SRSList">
+		<li data-role="list-divider">Service Requests</li>
+		<li class="sectionItem">
+			<a href="#">
+				<span class="icon_vector icon_maintenance_blue" style="float:left !important;"></span>
+				Request Service
+			</a>
+			<span class="ui-li-count" style="display: none;">0</span>
+		</li>
+		<li class="sectionItem">
+			<a href="#">
+				<span class="icon_vector icon_today" style="float:left !important;"></span>
+				Your Requests
+			</a>
+			<span class="ui-li-count" style="">2</span>
+		</li>
+		<li class="sectionItem">
+			<a href="#">
+				<span class="icon_vector icon_week" style="float:left !important;"></span>
+				All Requests
+			</a>
+			<span class="ui-li-count" style="">3</span>
+		</li>
+	</ul>
+
+	<ul class="ui-nodisc-icon sortable" data-role="listview" data-inset="true" id="PMList">
+		<li data-role="list-divider">Conference Room</li>
+		<li class="sectionItem">
+			<a href="#">
+				<span class="icon_vector icon_mobile_bulkupdate" style="float:left !important;"></span>
+				Make Reservation
+			</a>
+			<span class="ui-li-count" style="display: none;">0</span>
+		</li>
+		<li class="sectionItem">
+			<a href="#">
+				<span class="icon_vector icon_today" style="float:left !important;"></span>
+				Your Reservations
+			</a>
+			<span class="ui-li-count" style="">1</span>
+		</li>
+		<li class="sectionItem">
+			<a href="#">
+				<span class="icon_vector icon_week" style="float:left !important;"></span>
+				All Reservations
+			</a>
+			<span class="ui-li-count" style="">1</span>
+		</li>
+		<li class="sectionItem">
+			<a href="#">
+				<span class="icon_vector icon_calendar_new" style="float:left !important;"></span>
+				View Calendar
+			</a>
+			<span class="ui-li-count" style="display: none;">0</span>
+		</li>
+	</ul>
+
+	<ul class="ui-nodisc-icon sortable" data-role="listview" data-inset="true" id="Portal">
+		<li data-role="list-divider">Portal</li>
+		<li class="sectionItem">
+			<a href="#" class="ui-btn-noicon ui-btn ui-btn-icon-right">
+				<span class="icon_vector icon_newwindow_blue2" style="float:left !important;"></span>
+				View Portal
+			</a>
+			<span class="ui-li-count" style="display: none;">0</span>
+		</li>
+		<li class="sectionItem">
+			<a href="#">
+				<span class="icon_vector icon_yellowcaution" style="float:left !important;"></span>
+				Alerts
+			</a>
+			<span class="ui-li-count" style="">1</span>
+		</li>
+	</ul>
+
+	<ul class="ui-nodisc-icon sortable" data-role="listview" data-inset="true" id="Account">
+		<li data-role="list-divider">Account</li>
+		<li class="sectionItem">
+			<a href="#">
+				<span class="icon_vector icon_email_red" style="float:left !important;"></span>
+				Message Center
+			</a>
+			<span class="ui-li-count" style="">3</span>
+		</li>
+		<li class="sectionItem">
+			<a href="#">
+				<span class="icon icon_user_small" style="float:left !important;"></span>
+				Account Details
+			</a>
+			<span class="ui-li-count" style="display: none;">0</span>
+		</li>
+		<li class="sectionItem">
+			<a href="#">
+				<span class="icon_vector icon_report_caution icon_opacity50" style="float:left !important;"></span>
+				Notification Preferences
+			</a>
+			<span class="ui-li-count" style="display: none;">0</span>
+		</li>
+		<li class="sectionItem">
+			<a href="#" class="ui-btn-noicon ui-btn ui-btn-icon-right">
+				<span class="icon_vector icon_caret_left_red"></span>
+				Sign Out
+			</a>
+			<span class="ui-li-count" style="display: none;">0</span>
+		</li>
+	</ul>
+
+</div><!-- End Main Content -->
+<div data-tap-toggle="false" data-position="fixed" data-role="footer" class="mobile-footer theme-color" role="contentinfo">
+	<h1 class="ui-title" role="heading" aria-level="1">Corey Rice</h1>
+	<a href="#" data-role="none"><div class="mtm-plus-button"><span class="icon_vector icon_mobile_plus"></span></div></a>
+</div>
+
+<!--<cfinclude template="/controllers/messageHandler.cfm">-->
+
+</div><!-- page .mobile-wrapper end -->
+
 </body>
 </html>

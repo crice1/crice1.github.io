@@ -1,0 +1,546 @@
+/* styles to overwrite default mtm styles and styles specific to mobile tc */
+
+#SRSList .icon_vector, #PMList .icon_vector, #Portal .icon_vector, #Account .icon_vector, #SRSList .icon, #PMList .icon, #Portal .icon, #Account .icon {
+    margin: 3px 11px 0 0 !important;
+}
+
+.mobile-content .ui-listview li, .mobile-content .ui-listview a, .mobile-content .ui-listview a.ui-btn, .mobile-tasklist-block, .mobile-detail-page {
+    border-radius: 0 !important;
+    font-size: 14px !important;
+}
+
+.mobile-content .ui-listview li{
+    font-size: 14px !important;
+}
+
+.mobile-header h1{
+    margin-left:15px !important;
+}
+
+.mobile-content .ui-btn-icon-right.ui-btn-noicon::after {
+    background-image: none !important;
+}
+
+.front-page-alert{
+    background-color:#d23f17;
+    color:#fff;
+    text-shadow:none;
+    margin:0px -21px;
+    transition:max-height 0.5s;
+    max-height:1000px;
+    overflow:hidden;
+}
+
+.front-page-alert-off{
+    max-height:0px;
+}
+
+.front-page-alert-header{
+    background-color:#ad3411;
+    padding:12px 15px
+}
+
+.front-page-alert .icon_yellowcaution{
+    filter: brightness(100);
+    margin-top: -2px !important;
+}
+
+.front-page-alert-close{
+    float:right;padding:5px 12px;
+    font-size:20px !important;
+    margin-top:-8px;
+    margin-right:-8px;
+    cursor:pointer;
+}
+
+.front-page-alert-content{
+    padding:12px 15px;
+}
+
+.front-page-alert-footer{
+    background-color:#ad3411;
+    padding:12px 15px;
+    color:rgba(255,255,255,0.7);
+    font-size:13px
+}
+
+.icon_caret_left_red{
+    background-position: -79px -213px !important;
+    filter: saturate(500) hue-rotate(240deg);
+    float: left !important;
+    height: 23px !important;
+    margin-top: 0 !important;
+    transform: rotate(180deg);
+    width: 12px !important;
+}
+
+.mobile_contract_arrow{
+    filter: brightness(1.2);
+    float: right !important;
+    margin-top: -16px !important;
+    transform: rotate(180deg);
+    transition:transform 0.2s;
+}
+
+.mobile_expand_arrow{
+    transform: rotate(0deg);
+}
+
+.mobile-tasklist-block:last-child {
+    border: 0 none;
+}
+
+.alerttext_red{
+    color:#d61111 !important;
+}
+
+.alerttext_yellow{
+    color:#d4be00 !important;
+}
+
+.alerttext_green{
+    color:#1bca27 !important;
+}
+
+.alerttext_blue{
+    color:#3076ce !important;
+    font-size:13px !important;
+}
+
+.mobile-tasklist-text div{
+    margin-bottom:5px;
+}
+
+.alertdot{
+    width:10px;
+    height:10px;
+    display:inline-block;
+    border-radius:5px;
+    margin-right:7px;
+}
+
+.alertdot_red{
+    background-color:#d61111;
+}
+
+.alertdot_yellow{
+    background-color:#eacc00;
+}
+
+.alertdot_green{
+    background-color:#1bca27;
+}
+
+.billable_item_icon {
+    color: #1bca27;
+    display: block;
+    font-size: 15px;
+    margin-left: 1px;
+}
+
+.mobile-task-updatedtext{
+    font-size: 13px;
+    margin-top: -5px;
+}
+
+.mobile-task-description {
+    color: #999;
+    font-style: italic;
+}
+
+.billable_item_listwarning {
+    background-color: #fff9a3;
+    border: 1px solid #f3c976;
+    border-radius: 4px;
+    margin: 10px -10px 0;
+    padding: 5px;
+    text-align: center;
+}
+
+.grey-tasklist-item {
+    color: #999;
+}
+
+.mobile-content .ui-listview.approval_requested_header li {
+    background-color: #edc32a !important;
+    color: #555;
+    font-weight: normal;
+}
+
+.view_billable_items_button {
+    background-color: #4394d9;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px 10px;
+    padding: 10px;
+    text-align: center;
+    text-shadow: none;
+}
+
+.mobile-detail-page {
+    position: relative;
+}
+
+.mobile-detail-page .mobile-tasklist-block-icons {
+    top:11px;
+}
+
+.mobile-billable_items_approval_status {
+    border-bottom: 1px solid #ccc;
+    color: #666;
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.mobile-billable_items_info_basic div span,.mobile_billable_items_info_detailed_breakdown div span {
+    display: inline-block;
+    max-width: 200px;
+    width: 49%;
+}
+
+.mobile-billable_items_expand_trigger.ui-link,.mobile-terms_accept_trigger.ui-link,.mobile-terms_decline_trigger.ui-link {
+    display: block;
+    font-weight: normal;
+    margin-left: -10px;
+    padding: 10px;
+}
+
+.mobile-billable_items_total {
+    background-color: #feed6f;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 8px 10px;
+    text-shadow: none;
+}
+
+.mobile-billable_items_approve {
+    background-color: #4394d9;
+    border-radius: 8px;
+    color: #fff;
+    margin: 20px 0;
+    padding: 8px 10px;
+    text-align: center;
+    text-shadow: none;
+    cursor:pointer;
+}
+
+.mobile-billable_items_decline {
+    background-color: #db402f;
+    border-radius: 8px;
+    color: #fff;
+    margin: 20px 0;
+    padding: 8px 10px;
+    text-align: center;
+    text-shadow: none;
+    cursor:pointer;
+}
+
+.mobile-commbubble_admin {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    color: #515151;
+    font-size: 13.5px;
+    margin: 10px 10px 20px -5px;
+    padding: 9px 14px;
+    position:relative;
+    text-shadow:none;
+}
+
+.mobile-commbubble_user {
+    background-color: #e2e2e2;
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    color: #515151;
+    font-size: 13.5px;
+    margin: 10px -5px 20px 10px;
+    padding: 9px 14px;
+    position:relative;
+    text-shadow:none;
+}
+
+.mobile_commbubble_senderinfo {
+    color: #aaa;
+    font-size: 12px;
+    margin: 10px 0 0;
+}
+
+.mobile-commbubble_admin .mobile_commbubble_arrow {
+    background-color: #fff;
+    bottom: 8px;
+    height: 15px;
+    left: -5px;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 15px;
+}
+
+.mobile-commbubble_user .mobile_commbubble_arrow {
+    background-color: #e2e2e2;
+    top: 8px;
+    height: 15px;
+    right: -5px;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 15px;
+}
+
+.mobile-footer_comm.ui-footer {
+    background-color: #fff;
+    border-color: #ccc;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.mobile-footer_comm.ui-footer .ui-input-text{
+    border: 0 none;
+    border-radius: 0;
+    margin: 0 40px 0 0;
+    padding: 5px 10px 10px;
+}
+
+.mobile-footer_comm_textinput {
+    border-bottom: 1px solid #a3cbec !important;
+    line-height: inherit !important;
+    padding-bottom: 0 !important;
+    color: #444 !important;
+}
+
+.mobile-footer_comm_addbutton{
+    padding: 15px;
+    position: absolute;
+    right: 0;
+    top: -1px;
+    cursor:pointer;
+}
+
+.mobile-footer_comm .icon_mobile_add {
+    margin: 0 !important;
+}
+
+/*.ui-icon-delete{
+    background-color: #ddd;
+    margin-right: 10px;
+}*/
+
+.required_asterisk{
+    color: red;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    margin-top: -6px;
+}
+
+.grey{
+    color:#999;
+}
+
+.mobile-attachment_info {
+    margin: 0px 0px 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.mobile-attachment_info:last-child {
+    border: 0px none;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.mobile-attachment_info.attachment_info_addedit{
+    margin: 0px 0px 20px !important;
+    border-bottom: 1px solid #ccc !important;
+    padding-bottom: 20px !important;
+}
+
+.ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a{
+    font-weight:normal !important;
+}
+
+.mobile-tooltip-text {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.mobile-add_attachment_inputblock{
+    padding: 20px 0px;
+    border-bottom: 1px solid #bbb;
+}
+
+.mobile-add_attachment_block {
+    padding: 20px 0px;
+}
+
+.mobile-add_attachment_block_plus {
+    float: left;
+    margin: -5px 10px 0px 0px;
+    padding: 14px 8px;
+    border: 1px solid #bbb;
+    border-radius: 20px;
+    line-height: 0px;
+    font-size: 22px;
+}
+
+.mobile-add_attachment_block_text {
+    font-size: 13px;
+}
+
+.mobile-wrapper .ui-radio {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 4px;
+}
+
+.mobile-wrapper .ui-radio .ui-radio-off::after {
+    background-color: #ddd;
+    border: 1px solid #666;
+}
+
+.mobile-wrapper .ui-radio .ui-btn {
+    padding: 11px 16px !important;
+}
+
+.mobile-radio-wrapper{
+    display: block;
+    margin: 10px 0px 10px -10px;
+}
+
+.mobile-wrapper .ui-radio label:hover{
+    background-color:#fff !important;
+}
+
+.mobile-wrapper input[type="text"],.mobile-wrapper input[type="tel"],.mobile-wrapper input[type="email"]{
+    margin: -2px 0px -2px -5px !important;
+}
+
+.mobile-wrapper .ui-field-contain .ui-icon-delete {
+    display: none;
+}
+
+.mobile-wrapper input[disabled],.mobile-wrapper textarea[disabled] {
+    background-color: #eee;
+    color: #aaa !important;
+    margin: -2px 0px -2px -5px !important;
+    width: calc(100% + 10px);
+    border-radius: 10px;
+}
+
+.mobile-form .ui-field-contain.mobile-room_option {
+    padding: 10px 0px !important;
+    border-top: 1px solid #ccc !important;
+    margin: 0px -20px !important;
+}
+
+.mobile-form .ui-field-contain.mobile-room_option:first-of-type {
+    border-top: 0px !important;
+}
+
+.mobile-form .mobile-room_option .ui-checkbox {
+    margin: 0px;
+}
+
+.mobile-room_info_title {
+    display: inline-block;
+    max-width: 60%;
+    vertical-align: middle;
+}
+
+.mobile-room_info_trigger {
+    float: right;
+    padding: 10px;
+    margin: 0px;
+    transition:transform 0.2s;
+}
+
+.mobile-room_info_trigger_expanded{
+    transform:rotate(180deg);
+}
+
+.ui-field-contain.mobile-room_info_details {
+    margin-bottom: 20px !important;
+}
+
+.mobile-room_info_details div {
+    margin: 10px 0px;
+    color: #666;
+}
+
+.mobile-group_description{
+    color: #999;
+    font-style: italic;
+    margin: -12px 0px 0px 42px;
+    font-size: 13px;
+}
+
+.mobile-checkmark_label{
+    display: inline-block;
+    width: 75%;
+    vertical-align: middle;
+}
+
+.taskDetailsLink {
+    text-decoration: none;
+    color: inherit !important;
+}
+
+.mobile-detail-page .mobile-task-description {
+    margin-left: -30px;
+    margin-top: 20px;
+}
+
+.mobile-detail-page a{
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+.mobile-tasklist-showmore {
+    font-size: 17px !important;
+    color: #888;
+    margin: 30px -38px 30px -30px;
+    cursor: pointer;
+}
+
+.mobile-tasklist-showmore .icon_vector {
+    float: right !important;
+    margin-top: 5px !important;
+}
+
+.mobile-detail-page-block.mobile-detail-attachments {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.mobile-detail-attachments-name {
+    margin-bottom: 15px;
+}
+
+.mobile-detail-page .mobile-detail-attachments:last-child {
+    border: 0px none;
+}
+
+.ui-panel.alertpanel{
+    background-color:#3784c6 !important;
+}
+
+.alertpanel_icon {
+    margin: 0px auto;
+    display: block;
+    padding: 40px 0px 15px;
+    text-align: center;
+    border-bottom: 1px dashed #fff;
+    margin: 0 0 20px;
+}
+
+.alertpanel_text {
+    color: #fff;
+    text-shadow: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Lato', sans-serif;
+}

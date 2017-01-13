@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/dev-core-tenanthandbooks-com/!svn/ver/6681/branches/mobile-tc/mtc_core/scripts/mobile
+END
+mobile.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/dev-core-tenanthandbooks-com/!svn/ver/6681/branches/mobile-tc/mtc_core/scripts/mobile/mobile.js
+END
+disableAjaxLinks.js
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/dev-core-tenanthandbooks-com/!svn/ver/6388/branches/mobile-tc/mtc_core/scripts/mobile/disableAjaxLinks.js
+END
+feedback_messages.js
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/dev-core-tenanthandbooks-com/!svn/ver/6388/branches/mobile-tc/mtc_core/scripts/mobile/feedback_messages.js
+END
+mtm.js
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/dev-core-tenanthandbooks-com/!svn/ver/6568/branches/mobile-tc/mtc_core/scripts/mobile/mtm.js
+END
+deviceDetection.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/dev-core-tenanthandbooks-com/!svn/ver/6388/branches/mobile-tc/mtc_core/scripts/mobile/deviceDetection.js
+END
+convertColdFusionJSON.js
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/dev-core-tenanthandbooks-com/!svn/ver/6388/branches/mobile-tc/mtc_core/scripts/mobile/convertColdFusionJSON.js
+END
+bookmarkbubble.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/dev-core-tenanthandbooks-com/!svn/ver/6388/branches/mobile-tc/mtc_core/scripts/mobile/bookmarkbubble.min.js
+END
