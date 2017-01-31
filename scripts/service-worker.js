@@ -1,7 +1,6 @@
 // Register event listener for the 'push' event.
 self.addEventListener('push', function(event) {
   // Keep the service worker alive until the notification is created.
-  if (window.push_type == "sr"){
     event.waitUntil(
       // There are many other possible options, for an exhaustive list see the specs:
       //   https://notifications.spec.whatwg.org/
@@ -11,15 +10,6 @@ self.addEventListener('push', function(event) {
           vibrate: [200, 100, 200, 100, 200, 100, 400]
         })
     );
-  }
-  else{
-    event.waitUntil(
-      self.registration.showNotification('Reservation Approved', {
-        body: 'Your reservation for Large Conference Room has been approved! Click for more details.',
-        icon: 'conference-room-reservations_icon',
-        vibrate: [200, 100, 200, 100]
-      })
-    );
-  }
+
 });
 
