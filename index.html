@@ -61,8 +61,25 @@
 			if(!iOS){
 				$('#BubbleAnchor').hide();
 			}
+
+			$("#send_push_sr,#send_push_cr").click(function(){
+				$(".sending_notification_message").removeClass("sending_notification_message_off");
+				$(".delay_display").html($("#notification_delay").val());
+				setTimeout(function(){$(".sending_notification_message").addClass("sending_notification_message_off")},$("#notification_delay").val());
+			})
 		})
 	</script>
+
+	<style>
+		.sending_notification_message{
+			color:green;
+			opacity:1.0;
+			transition:opacity 0.3s;
+		}
+		.sending_notification_message_off{
+			opacity:0.0;
+		}
+	</style>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet"> 
 
@@ -77,8 +94,10 @@
 		<a href="#flyout_origin" data-rel="close" data-ajax="false"><span class="icon_vector icon_mobile_close"></span></a>
 		<br/><br/>
 		<ul data-role="listview" data-inset="true">
-			<li><a href="#">Send Example SR Push Notification</a></li>
-			<li><a href="#">Send Example CR Push Notification</a></li>
+			<li><a id="send_push_sr" href="#">Send Example SR Push Notification</a></li>
+			<li><a id="send_push_cr" href="#">Send Example CR Push Notification</a></li>
+			<li>Delay: <input id="notification_delay" type="text" value="10"/> seconds</li>
+			<li class="sending_notification_message sending_notification_message_off">sending notification in <span class="delay_display"></span> seconds...</li>
 		</ul>
 		</cfoutput>
 		<br/>
