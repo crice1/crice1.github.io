@@ -1,8 +1,8 @@
 function populate_content(){
   var varbody = "Fourth floor mens bathroom: the toilet in the stall is not flushing, please se...";
   var varicon = "service-request_icon.png";
-  var data = [varbody,varicon]
-  return data;
+  var vardata = [varbody,varicon]
+  return vardata;
   /*if (window.push_type == "sr"){
     varbody = "Fourth floor mens bathroom: the toilet in the stall is not flushing, please se...";
     varicon = "service-request_icon.png";
@@ -17,7 +17,8 @@ function populate_content(){
 self.addEventListener('push', function(event) {
   // Keep the service worker alive until the notification is created.
   event.waitUntil(
-    populate_content().then(function(data){
+    populate_content()
+    .then(function(data){
     // There are many other possible options, for an exhaustive list see the specs:
     //   https://notifications.spec.whatwg.org/
       self.registration.showNotification('New Service Request', {
