@@ -1,5 +1,5 @@
-var varbody2 = window.varbody;
-var varicon2 = window.varicon;
+var varbody2 = "Fourth floor mens bathroom: the toilet in the stall is not flushing, please se...";
+var varicon2 = "service-request_icon.png";
 
 // Register event listener for the 'push' event.
 self.addEventListener('push', function(event) {
