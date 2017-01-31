@@ -1,7 +1,7 @@
 // Register event listener for the 'push' event.
 self.addEventListener('push', function(event) {
   // Keep the service worker alive until the notification is created.
-  if (push_type == "sr"){
+  if (window.push_type == "sr"){
     event.waitUntil(
       // There are many other possible options, for an exhaustive list see the specs:
       //   https://notifications.spec.whatwg.org/
