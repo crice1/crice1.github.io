@@ -37,7 +37,7 @@ $("#send_push_sr,#send_push_cr").click(function(){
   else{
     push_type == "cr";
   }
-  console.log(push_type)
+  console.log("test: "+$(this).attr("id"))
   $(".sending_notification_message").removeClass("sending_notification_message_off");
   $(".delay_display").html($("#notification_delay").val());
   setTimeout(function(){$(".sending_notification_message").addClass("sending_notification_message_off")},$("#notification_delay").val()*1000);
