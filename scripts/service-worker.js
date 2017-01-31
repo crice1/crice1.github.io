@@ -1,13 +1,13 @@
 var varbody = "Fourth floor mens bathroom: the toilet in the stall is not flushing, please se...";
 var varicon = "service-request_icon.png";
-/*if (window.push_type == "sr"){
+if (window.push_type == "sr"){
   varbody = "Fourth floor mens bathroom: the toilet in the stall is not flushing, please se...";
   varicon = "service-request_icon.png";
 }
 else{
   varbody = "Your reservation for Large Conference Room has been approved! Click for more details.";
   varicon = "conference-room-reservations_icon";
-}*/
+}
 
 // Register event listener for the 'push' event.
 self.addEventListener('push', function(event) {
