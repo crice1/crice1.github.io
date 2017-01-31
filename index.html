@@ -61,20 +61,15 @@
 			if(!iOS){
 				$('#BubbleAnchor').hide();
 			}
-
-			$("#send_push_sr,#send_push_cr").click(function(){
-				$(".sending_notification_message").removeClass("sending_notification_message_off");
-				$(".delay_display").html($("#notification_delay").val());
-				setTimeout(function(){$(".sending_notification_message").addClass("sending_notification_message_off")},$("#notification_delay").val()*1000);
-			})
 		})
 	</script>
 
 	<style>
-		.sending_notification_message{
-			color:green;
-			opacity:1.0;
-			transition:opacity 0.3s;
+		.ui-panel li.ui-li-static.sending_notification_message {
+			background-color: #18a518 !important;
+			opacity: 1.0;
+			transition: opacity 0.3s;
+			cursor:default;
 		}
 		.sending_notification_message_off{
 			opacity:0.0;
@@ -91,6 +86,7 @@
 			color: #fff;
 			text-shadow: none;
 			margin-left: 9px;
+			cursor:default;
 		}
 		.ui-panel li.ui-li-static{
 			background-color: #3885c3 !important;
@@ -99,6 +95,7 @@
 		    font-weight: normal;
 		    padding: 10px 20px;
 		    text-shadow: none !important;
+		    cursor:pointer;
 		}
 
 		.ui-panel li.ui-li-static:first-child{
@@ -194,6 +191,8 @@
 <!--<cfinclude template="/controllers/messageHandler.cfm">-->
 
 </div><!-- page .mobile-wrapper end -->
+
+<script src="/scripts/index.js"></script>
 
 </body>
 </html>
