@@ -92,6 +92,22 @@
 			text-shadow: none;
 			margin-left: 9px;
 		}
+		.ui-panel li.ui-li-static{
+			background-color: #3885c3 !important;
+		    border: 2px solid #2d5278 !important;
+		    color: #ffffff !important;
+		    font-weight: normal;
+		    padding: 10px 20px;
+		    text-shadow: none !important;
+		}
+
+		.ui-panel li.ui-li-static:first-child{
+			border-top:0px none !important;
+		}
+
+		.ui-panel li.ui-li-static:last-child{
+			border-bottom:0px none !important;
+		}
 	</style>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet"> 
@@ -102,13 +118,13 @@
 	
 	<div data-role="page" class="mobile-wrapper">
 
-	<div data-role="panel" id="panel-overlay" data-display="overlay" data-position-fixed="true" data-dismissible="false" class="ui-nodisc-icon">
+	<div data-role="panel" id="panel-overlay" data-display="overlay" data-position-fixed="true" class="ui-nodisc-icon">
 
 		<a href="#flyout_origin" data-rel="close" data-ajax="false"><span class="icon_vector icon_mobile_close"></span></a>
 		<br/><br/>
 		<ul data-role="listview" data-inset="true">
-			<li><a id="send_push_sr" href="javascript:void(0)" data-ajax="false">Send Example SR Push Notification</a></li>
-			<li><a id="send_push_cr" href="javascript:void(0)" data-ajax="false">Send Example CR Push Notification</a></li>
+			<li id="send_push_sr">Send Example SR Push Notification</li>
+			<li id="send_push_cr">Send Example CR Push Notification</li>
 			<li class="notification_delay_wrapper">Delay: <input id="notification_delay" type="text" value="10"/> seconds</li>
 			<li class="sending_notification_message sending_notification_message_off">sending notification in <span class="delay_display"></span> seconds...</li>
 		</ul>
