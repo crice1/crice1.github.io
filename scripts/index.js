@@ -30,19 +30,19 @@ navigator.serviceWorker.register('/scripts/service-worker.js')
   });
 });
 
-var varbody = "Fourth floor mens bathroom: the toilet in the stall is not flushing, please se...";
-var varicon = "service-request_icon.png";
+window.varbody = "Fourth floor mens bathroom: the toilet in the stall is not flushing, please se...";
+window.varicon = "service-request_icon.png";
 
 $("#send_push_sr,#send_push_cr").click(function(){
   if ($(this).attr("id") == "send_push_sr"){
     window.push_type = "sr";
-    varbody = "Fourth floor mens bathroom: the toilet in the stall is not flushing, please se...";
-    varicon = "service-request_icon.png";
+    window.varbody = "Fourth floor mens bathroom: the toilet in the stall is not flushing, please se...";
+    window.varicon = "service-request_icon.png";
   }
   else{
     window.push_type = "cr";
-    varbody = "Your reservation for Large Conference Room has been approved! Click for more details.";
-    varicon = "conference-room-reservations_icon";
+    window.varbody = "Your reservation for Large Conference Room has been approved! Click for more details.";
+    window.varicon = "conference-room-reservations_icon";
   }
   console.log("test: "+push_type)
   $(".sending_notification_message").removeClass("sending_notification_message_off");
