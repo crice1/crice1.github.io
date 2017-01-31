@@ -1,5 +1,4 @@
 var endpoint;
-var push_type;
 
 // Register a Service Worker.
 navigator.serviceWorker.register('/scripts/service-worker.js')
