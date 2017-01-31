@@ -79,6 +79,19 @@
 		.sending_notification_message_off{
 			opacity:0.0;
 		}
+		.ui-panel-inner .ui-input-text {
+			width: 30px;
+			display: inline-block;
+			vertical-align: middle;
+			margin: 17px 5px;
+		}
+		.notification_delay_wrapper.ui-li-static {
+			background-color: #2d5278 !important;
+			border: 0px none;
+			color: #fff;
+			text-shadow: none;
+			margin-left: 9px;
+		}
 	</style>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet"> 
@@ -94,9 +107,9 @@
 		<a href="#flyout_origin" data-rel="close" data-ajax="false"><span class="icon_vector icon_mobile_close"></span></a>
 		<br/><br/>
 		<ul data-role="listview" data-inset="true">
-			<li><a id="send_push_sr" href="#">Send Example SR Push Notification</a></li>
-			<li><a id="send_push_cr" href="#">Send Example CR Push Notification</a></li>
-			<li>Delay: <input id="notification_delay" type="text" value="10"/> seconds</li>
+			<li><a id="send_push_sr" href="#" data-role="none" data-ajax="false">Send Example SR Push Notification</a></li>
+			<li><a id="send_push_cr" href="#" data-role="none" data-ajax="false">Send Example CR Push Notification</a></li>
+			<li class="notification_delay_wrapper">Delay: <input id="notification_delay" type="text" value="10"/> seconds</li>
 			<li class="sending_notification_message sending_notification_message_off">sending notification in <span class="delay_display"></span> seconds...</li>
 		</ul>
 		</cfoutput>
