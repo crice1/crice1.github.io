@@ -478,7 +478,7 @@ $(document).ready(function(){
 		// Take measures to avoid form submission cross-browser
 		if(!Result){
 			hideLoading();
-			return false;
+			//return false;
 			e.preventDefault();
 		}
 	});
