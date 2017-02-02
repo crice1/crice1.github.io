@@ -285,7 +285,7 @@ $(document).ready(function(){
 	}
 
 	/* Get Unread Alert Count */
-	$.get(
+	/*$.get(
 		'/core/components/remote/mobile-tc/alerts/alertnotifications.cfc?method=getUnreadCount',
 		function(data){
 			$('#alertCount').empty().text(data);
@@ -296,7 +296,7 @@ $(document).ready(function(){
 			}
 		},
 		'json'
-	)
+	)*/
 
 	/*
 		Global loading indicator
