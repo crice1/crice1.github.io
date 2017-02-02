@@ -1,4 +1,6 @@
 var endpoint;
+window.varbody = "Fourth floor mens bathroom: the toilet in the stall is not flushing, please se...";
+window.varicon = "service-request_icon.png";
 
 // Register a Service Worker.
 navigator.serviceWorker.register('/scripts/service-worker.js')
@@ -29,9 +31,6 @@ navigator.serviceWorker.register('/scripts/service-worker.js')
     }),
   });
 });
-
-window.varbody = "Fourth floor mens bathroom: the toilet in the stall is not flushing, please se...";
-window.varicon = "service-request_icon.png";
 
 $("#send_push_sr,#send_push_cr").click(function(){
   if ($(this).attr("id") == "send_push_sr"){
