@@ -30,7 +30,7 @@ navigator.serviceWorker.register('./scripts/service-worker.js')
   });
 });
 
-navigator.serviceWorker.register('/scripts/cr_sw/service-worker-cr.js')
+navigator.serviceWorker.register('./scripts/cr_sw/service-worker-cr.js')
 .then(function(registration) {
   // Use the PushManager to get the user's subscription to the push service.
   return registration.pushManager.getSubscription()
