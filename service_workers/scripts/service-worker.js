@@ -6,7 +6,7 @@ self.addEventListener('push', function(event) {
     //   https://notifications.spec.whatwg.org/
       self.registration.showNotification('New Service Request', {
         body: "Fourth floor mens bathroom: the toilet in the stall is not flushing, please se...",
-        icon: "/service-request_icon.png",
+        icon: "./service-request_icon.png",
         vibrate: [200, 100, 200, 100, 200, 100, 400]
       })
   );

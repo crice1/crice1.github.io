@@ -6,7 +6,7 @@ self.addEventListener('push', function(event) {
     //   https://notifications.spec.whatwg.org/
       self.registration.showNotification('Reservation Approved', {
         body: "Your reservation for Large Conference Room has been approved! Click for more details.",
-        icon: "conference-room-reservations_icon.png",
+        icon: "./conference-room-reservations_icon.png",
         vibrate: [200, 100, 200, 100, 200, 100, 400]
       })
   );
