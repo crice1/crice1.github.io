@@ -17,9 +17,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="./scripts/jquery.mobile-1.4.5/demos/css/themes/default/jquery.mobile-1.4.5.min.css">
-	<link rel="stylesheet" type="text/css" href="./styles/mtm_content_elements.css?v2">
-	<link rel="stylesheet" type="text/css" href="./styles/mtm_content_elements_tc.css">
-	<link rel="stylesheet" type="text/css" href="./styles/icons.css">
 
 	<!-- \\ Meta data for various iOS devices -->
 	<link rel="apple-touch-icon" sizes="180x180" href="./mtm-apple-touch-icon.png">
@@ -40,162 +37,17 @@
 	<!-- \\ Include android web app manifest \\ -->
 	<link rel="manifest" href="./manifest.json">
 
-
-	<script src="./scripts/mobile/disableAjaxLinks.js"></script><!-- this has to be loaded before jquery mobile to work -->
-	<script src="./scripts/mobile/bookmarkbubble.min.js"></script>
-	<script src="./scripts/mobile/deviceDetection.js"></script>
-
-
-	<script src="./scripts/jquery.mobile-1.4.5/demos/js/jquery.mobile-1.4.5.min.js"></script>
-	<script type="text/javascript" src="./scripts/jquery_ui_dragsort/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="./scripts/touchpunch/touchpunch.js"></script>
-	<script src="./scripts/mobile/feedback_messages.js"></script>
-	<script src="./scripts/mobile/convertColdFusionJSON.js"></script>
-	<script src="./scripts/mobile/mobile.js"></script>
-	<!-- display placeholder values for inputs on IE9 and below -->
-	<script src="./scripts/jquery_placeholder/jquery.placeholder.min.js"></script>
-	
-	<script type="text/javascript">
-		var push_type,varbody,varicon;
-		$(document).ready(function(){
-			$('input, textarea').placeholder();
-			if(!iOS){
-				$('#BubbleAnchor').hide();
-			}
-		})
-	</script>
-
-	<style>
-		.ui-panel li.ui-li-static.sending_notification_message {
-			background-color: #18a518 !important;
-			opacity: 1.0;
-			transition: opacity 0.3s;
-			cursor:default;
-		}
-		.sending_notification_message_off{
-			opacity:0.0 !important;
-		}
-		.ui-panel-inner .ui-input-text {
-			width: 30px;
-			display: inline-block;
-			vertical-align: middle;
-			margin: 17px 5px;
-		}
-		.ui-panel li.notification_delay_wrapper.ui-li-static {
-			background-color: #2d5278 !important;
-			border: 0px none;
-			color: #fff;
-			text-shadow: none;
-			margin-left: 9px;
-			cursor:default;
-		}
-		.ui-panel li.ui-li-static{
-			background-color: #3885c3 !important;
-		    border: 2px solid #2d5278 !important;
-		    color: #ffffff !important;
-		    font-weight: normal;
-		    padding: 10px 20px;
-		    text-shadow: none !important;
-		    cursor:pointer;
-		}
-
-		.ui-panel li.ui-li-static:first-child{
-			border-top:0px none !important;
-		}
-
-		.ui-panel li.ui-li-static:last-child{
-			border-bottom:0px none !important;
-		}
-	</style>
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet"> 
-
 </head>
 
 <body style="background-color:#333;">
 	
-	<div data-role="page" class="mobile-wrapper">
 
-	<div data-role="panel" id="panel-overlay" data-display="overlay" data-position-fixed="true" class="ui-nodisc-icon">
-
-		<a href="#flyout_origin" data-rel="close" data-ajax="false"><span class="icon_vector icon_mobile_close"></span></a>
-		<br/><br/>
 		<ul data-role="listview" data-inset="true">
 			<li id="send_push_sr">Send Example SR Push Notification</li>
 			<li id="send_push_cr">Send Example CR Push Notification</li>
 			<li class="notification_delay_wrapper">Delay: <input id="notification_delay" type="text" value="10" style="color:#000 !important;"/> seconds</li>
 			<li class="sending_notification_message sending_notification_message_off">sending notification in <span class="delay_display"></span> seconds...</li>
 		</ul>
-		</cfoutput>
-		<br/>
-		<div class="tooltip" style="color:#ccc;text-shadow:none">
-			<span class="icon_vector icon_info inline_icon"></span> 
-			How to test: First if you're on an android device, add this site to your homescreen as a bookmark. Check that it's on your home screen and come back to this page via the new icon. Click one of the buttons above to send an example push notification. Go back to your home screen before the delay runs out. You should receive the notification. You can also test this on a desktop as long as you accepted the permissions asked by the browser.
-		</div>
-		<div id="BubbleAnchor" style="position:fixed; bottom:10px; width:90%;">
-			<button class="ui-btn ui-shadow ui-corner-all homeIconShortcut">Add to Home Screen</button>
-		</div>
-		<div style="clear: both;"><br /><br /></div>
-	</div>
-
-
-	<div class="mobile-header theme-color" data-role="header" data-position="fixed" data-tap-toggle="false">
-		
-		<h1 id="home-header2">Service Worker Example</h1>
-		
-		<span class="ui-li-count highpriority ui-body-inherit all-tasks-count" id="alertCount">0</span> <!-- this cant be an <a> tag, something weird with jquery mobile. use onclick for link. -->
-
-		<a href="#" data-role="none"><span class="icon_vector icon_mobile_search"></span></a>
-		
-		<!--<a href="?pid=accountmenu" data-role="none"><span class="icon icon_mobile_nav"></span></a>-->
-		<a id="flyout_origin" href="#panel-overlay" data-role="none" data-ajax="false"><span class="icon_vector icon_mobile_nav"></span></a>
-
-	</div> <!-- end header -->
-	<div class="ui-content mobile-content" role="main"><!-- Start Main Content -->
-
-		<div class="front-page-alert front-page-alert-off">
-  
-			<div class="front-page-alert-header">
-				<span class="icon_vector icon_yellowcaution inline_icon"></span> Tornado Watch
-				<span class="front-page-alert-close" onclick="$('.front-page-alert').addClass('front-page-alert-off');">&times;</span>
-			</div>
-
-			<div class="front-page-alert-content">
-				A Tornado Watch has been issued for area lasting from 3:00PM to 5:00PM today. Please alert all of your employees and review the tornado shelter plan in place for the building.
-			</div>
-
-			<div class="front-page-alert-footer">
-				Alert expires on April 15th, 2015 at 4:59PM
-			</div>
-		  
-		</div>
-
-	<ul class="ui-nodisc-icon sortable" data-role="listview" data-inset="true" id="SRSList">
-		<li data-role="list-divider">Examples</li>
-		<li class="sectionItem">
-			<a href="#">
-				<span class="icon-white icon_today" style="float:left !important;"></span>
-				Your Requests
-			</a>
-			<!--<span class="ui-li-count" style="">2</span>-->
-		</li>
-		<li class="sectionItem">
-			<a href="#">
-				<span class="icon-white icon_today" style="float:left !important;"></span>
-				Your Reservations
-			</a>
-		</li>
-	</ul>
-
-</div><!-- End Main Content -->
-<div data-tap-toggle="false" data-position="fixed" data-role="footer" class="mobile-footer theme-color" role="contentinfo">
-	<h1 class="ui-title" role="heading" aria-level="1">Corey Rice</h1>
-	<a href="#" data-role="none"><div class="mtm-plus-button"><span class="icon_vector icon_mobile_plus"></span></div></a>
-</div>
-
-<!--<cfinclude template="/controllers/messageHandler.cfm">-->
-
-</div><!-- page .mobile-wrapper end -->
 
 <script src="./scripts/index.js"></script>
 
